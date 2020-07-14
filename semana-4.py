@@ -157,5 +157,17 @@ print(replace_ending("The weather is nice in May", "may", "april"))
 print(replace_ending("The weather is nice in May", "May", "April")) 
 # Should display "The weather is nice in April"
 
+#que es una lista
+x = ["Now", "we", "are", "cooking"]
+print(type(x))
+print(x)
+print(len(x))
+"are" in x
+"today" in x
+print(x[0])
+print(x[3])
+print(x[1:3])
+print(x[:2])
+print(x[2:])
 
 
