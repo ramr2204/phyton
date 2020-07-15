@@ -134,29 +134,6 @@ print(nametag("Francesco", "Rinaldi"))
 print(nametag("Jean-Luc", "Grand-Pierre")) 
 # Should display "Jean-Luc G." 
 
-#pregunta 5 pedir explicación o buscarla
-def replace_ending(sentence, old, new):
-	# Check if the old string is at the end of the sentence 
-	if sentence.endswith(old):
-		# Using i as the slicing index, combine the part
-		# of the sentence up to the matched string at the 
-		# end with the new string
-		i = sentence.rfind(old)
-		new_sentence = sentence[:i]+new
-		return new_sentence
-
-	# Return the original sentence if there is no match 
-	return sentence
-	
-print(replace_ending("It's raining cats and cats", "cats", "dogs")) 
-# Should display "It's raining cats and dogs"
-print(replace_ending("She sells seashells by the seashore", "seashells", "donuts")) 
-# Should display "She sells seashells by the seashore"
-print(replace_ending("The weather is nice in May", "may", "april")) 
-# Should display "The weather is nice in May"
-print(replace_ending("The weather is nice in May", "May", "April")) 
-# Should display "The weather is nice in April"
-
 #que es una lista
 x = ["Now", "we", "are", "cooking"]
 print(type(x))
@@ -170,4 +147,46 @@ print(x[1:3])
 print(x[:2])
 print(x[2:])
 
+#Modifying the Contents of a List
+fruits = ["Pineapple", "Banana", "Apple", "Melon"]
+fruits.append("Kiwi")
+print(fruits)
+fruits.insert(0, "orange")
+print(fruits)
+fruits.insert(25, "peach")
+print(fruits)
+fruits.insert(3, "mango")
+print(fruits)
+fruits.remove("mango")
+print(fruits)
+fruits.pop(2)
+print(fruits)
+fruits[3] = "Mango"
+print(fruits)
 
+animals = ["lion", "zebra", "dolphin", "monkey" ]
+chars = 0
+for animal in animals:
+	chars += len(animal)
+print("total characters: {}, average length: {}".format(chars, chars/len(animals)))
+
+winners = ["Ashley", "Dylan", "reese"]
+for index, person in enumerate(winners):
+	print("{} - {}". format(index + 1, person))
+#exercise
+def skip_elements(elements):
+	# code goes here
+	elements = [v for i, v in enumerate(elements) if i % 2 == 0]
+	return elements
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+
+def ful_emails(people):
+	result = []
+	for email, name in people:
+		result.append("{} <{}>".format(name, email))
+	return result
+
+print(ful_emails([("alex@example.com" , "Alex Diego"),
+("shav@example.com", "Shav Brandt")]))
