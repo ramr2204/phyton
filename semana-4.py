@@ -164,6 +164,7 @@ print(fruits)
 fruits[3] = "Mango"
 print(fruits)
 
+#Iterating over Lists and Tuples
 animals = ["lion", "zebra", "dolphin", "monkey" ]
 chars = 0
 for animal in animals:
@@ -172,7 +173,7 @@ print("total characters: {}, average length: {}".format(chars, chars/len(animals
 
 winners = ["Ashley", "Dylan", "reese"]
 for index, person in enumerate(winners):
-	print("{} - {}". format(index + 1, person))
+	print("{} - {}". format(index + 1, person))#no entiendo esta linea de codigo
 #exercise
 def skip_elements(elements):
 	# code goes here
@@ -190,3 +191,18 @@ def ful_emails(people):
 
 print(ful_emails([("alex@example.com" , "Alex Diego"),
 ("shav@example.com", "Shav Brandt")]))
+
+#List Comprehensions
+multiples =[]
+for x in range (1,11):
+	multiples.append(x*7)
+print(multiples)
+
+multiples = [x*7 for x in range(1,11)]
+print(multiples)
+languages = ["python", "perl", "Ruby", "Go", "java", "C" ]
+lengths = [len (language)for language in languages]
+print(lengths)
+
+z = [x for x in range(0,101) if x % 3 == 0]
+print(z)

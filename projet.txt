@@ -1,0 +1,38 @@
+m Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+    # LEARNER CODE START HERE
+    frequencies={}
+    words=file_contens.split()
+    for word in words:
+        if word.lower() not in uninteresting_words and word.isalpha():
+            if word:lower() not in frequencies:
+                frequencies[word.lower()]=1
+            else:
+                frequencies[word.lower()]+=1
+    #wordcloud
+    cloud = wordcloud.WordCloud()
+    cloud.generate_from_frequencies(frequencies)
+    coud.to_file()
+    return cloud.to_array()
+
+
+# This is the uploader widget
+import fileupload
+import io
+def _upload():
+
+    _upload_widget = fileupload.FileUploadWidget()
+
+    def _cb(change):
+        global file_contents
+        decoded = io.StringIO(change['owner'].data.decode('utf-8'))
+        filename = change['owner'].filename
+        print('Uploaded `{}` ({:.2f} kB)'.format(
+            filename, len(decoded.read()) / 2 **10))
+        file_contents = decoded.getvalue()
+
+    _upload_widget.observe(_cb, names='data')
+    display(_upload_widget)
+
+_upload()
