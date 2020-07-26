@@ -118,6 +118,6 @@ if $facts['is_virtual']{
 
 #Los principios de manejo de la gestión de la configuración
 #file {'/etc/inssue':
- # mode    => '0644',
+  #mode    => '0644',
   #content = > "Internal system \l \n ",
 #}
