@@ -114,7 +114,7 @@ if $facts['is_virtual']{
   packkage{'smartmontools':
     ensure => installed,
   }
-}"""
+} """
 
 #Los principios de manejo de la gestión de la configuración
 #file {'/etc/inssue':
