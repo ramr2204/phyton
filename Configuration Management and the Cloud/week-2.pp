@@ -1,5 +1,5 @@
 #todo esto es en vim
-"""class ntp{
+    class ntp{
     package {'ntp:
         ensure => lates,
     }
@@ -15,9 +15,9 @@
         requiere => file['/etc/ntp.conf'],
     }
 }
-include ntp"""
+include ntp
 
-"""node webserver.example.com{
+node webserver.example.com{
     class{'sudo':}
     class{'ntp':
         servers =>['ntp1.example.com','ntp2exmple.com']
@@ -28,9 +28,9 @@ include ntp"""
 node webserver.example.com{
     class{'apache':}
 }
-node default{}"""
+node default{}
 
-"""describe 'gksu' , :type => class do
+describe 'gksu' , :type => class do
     let (:facts) {{'is_virtual' =>'false'}}
     is {should contain_package('gksu').with_ensure('latest') }
-    end"""
+    end
