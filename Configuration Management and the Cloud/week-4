@@ -1,0 +1,36 @@
+GESTION DE CAMBIOS
+
+Para mejorar la seguridad en los cambios hay que realizar pruebas unitarias y de integración.
+
+*Comenzando con monitoreo
+Monitoreo nos permite analizar la historia y el estado actual de un sistema
+
+¿recibir alertas cuando las cosas vana mal como se hace?
+R/: Se ejecuta un trabajo  periodicamnete que verifica las salud del sistema y envia un correo electronico si el sistema no esta en buen estado, en linux se una un CRON que es una herremienta
+para trabajos peiodicos, emparejado con un <scrip> de python que verifica cel servicio y envia todos los correos necesarios.
+
+*objetivos de nivel de servicio 
+SLO: Son objetivos de rendimiento preestablecidos para un servicio especifico, establecelos atyudan a gestionar les expectativas de los usuarios del servicio.
+SLA: promesas en formas de acuerdos de nivel de servicio en un compromiso entre un proveedor y un cliente
+
+Hay varios porcentajes que nuestro servicio puede presentar fallas siempre estan en escala de 99%, 99.9%, 99.99% etc ; este es el porcentaje que estara en funcionamiento, el restante al 100%
+sera el servicio inactivo del servicio ya que no exite un servicio 24/7 este porcentaje es el   que nos determina cuanto va estar en inactivida nuestro servicio por minutos en el mes, 
+entre mayor sea el porcentaje de activida por mes mayor va ser el soporte requerido para mantenerlo en linea
+
+*Monitoreo basico en GCP
+
+STACKDRIVER: Proveedor de la nube para supervisar y crear alertas, normalmente se usan tres metricas principales basicas, uso de CPU, E/S de disco y trafico de red, las metrica varian dependiendo de lo que vallamso a correr en la vallamso
+
+*Solución de problemas de depuracón 
+*Que hacer cuando no este allí 
+Hay que observar los registros, algunos problemas son faciles de dar solución como aumentar la memoria, crear instancias de la VM para pruebas etc.
+
+*Identificando la falla
+como saber si la falla proviene de nuestro lado o de el proveedor?
+Normalmente los problemas del proveedor tienden aislarse por regiones geograficas, si tienes un problema abre tu servicio en una region diferente, si el problema se soluciona es de el proveedor
+si no es de tu sistema
+
+*Contenedores: Son aplicaciones empaquetadas que se envian junto con su biblioteca, cada aplicación se ejecuta con un contenedor separado 
+
+*RECUPERARSE DEL FRACASO 
+Realizar backups de la infraestructura y mantener el servicio en servidores distintos donde se sature uno o ocurra un error pues los otros servidores puedan seguri con su funcionamiento
