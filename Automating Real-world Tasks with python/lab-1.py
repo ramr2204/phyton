@@ -13,7 +13,7 @@ for image in os.listdir("."):
         else:
             continue
 
-*con este si se logro
+#con este si se logro
 #!/usr/bin/env python3
 import os
 from PIL import Image
