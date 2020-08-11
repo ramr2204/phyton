@@ -1,0 +1,8 @@
+Nombre del modulo: gestion y configuración y la nube
+
+*En est modulo aprendi que es el escalado en la nube(vertical,horizontal,etc), que es la nube y por que causo denconfainza en algunos sectores 
+desconfianza cuando se utilizo su implementación, vi tambien creacion de VM en la plataforma de ccgoogle(GCP), a su vez aprendi sobre 
+la Orquestación:( Es la configuración automatizada y coordinada de sistemas y servicios de TI complejos)
+
+*Tambien se uso la automatización en la nube con VM donde en el equipo local se deplegaron instancias virtuales de la copia de ina imagen de una VM 
+donde se generaron 3 o 4 copias de la misma maquina 
